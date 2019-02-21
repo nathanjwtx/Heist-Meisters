@@ -1,0 +1,12 @@
+
+\.idea/
+
+\.mono/
+
+\.vscode/
+
+\.import/
+\.vs/
+*.sln.DotSettings.user
+
+
