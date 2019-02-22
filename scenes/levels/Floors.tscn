@@ -19,7 +19,7 @@
 [ext_resource path="res://assets/GFX/PNG/Tiles/tile_100.png" type="Texture" id=17]
 [ext_resource path="res://assets/GFX/PNG/Tiles/tile_101.png" type="Texture" id=18]
 
-[node name="Node2D" type="Node2D"]
+[node name="Floors" type="Node2D"]
 
 [node name="tile_42" type="Sprite" parent="."]
 position = Vector2( 435.193, 180.255 )
