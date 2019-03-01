@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/hitman1_stand.png-e4e8e018dc2648fe4ec5dbc0ff5607fb.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

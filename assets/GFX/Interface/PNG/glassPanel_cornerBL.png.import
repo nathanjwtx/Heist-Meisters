@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/glassPanel_cornerBL.png-b60f305c5b5a28019b725cb4f817dfd1.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

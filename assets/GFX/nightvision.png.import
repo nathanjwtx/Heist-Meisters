@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/nightvision.png-e1c4a35ff6c8c99a6e519176cac35269.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

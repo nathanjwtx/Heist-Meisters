@@ -1,6 +1,7 @@
 extends "res://scenes/characters/Character.gd"
 
 var motion : Vector2 = Vector2();
+var torchOn : bool = true;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,3 +28,13 @@ func update_motion(delta : float):
 		motion.x = clamp((motion.x + SPEED), MAX_SPEED, 0);
 	else:
 		motion.x = lerp(motion.x, 0, FRICTION);
+		
+func _input(event):
+	if Input.is_action_just_pressed("ui_torch"):
+		torch();
+
+func torch():
+	if $Torch.enabled:
+		$Torch.enabled = false;
+	else:
+		$Torch.enabled = true;

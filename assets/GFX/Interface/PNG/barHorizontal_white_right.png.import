@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/barHorizontal_white_right.png-77f8c0ee2de3ccc2a2e79cdc9c2787b1.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 

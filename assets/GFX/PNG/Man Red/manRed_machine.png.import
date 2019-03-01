@@ -3,6 +3,9 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/manRed_machine.png-75bbef9b9514b339c3e757fc5ceff735.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
