@@ -32,7 +32,7 @@ public class Player : Character
         }
         else if (Input.IsActionPressed("ui_down") && !Input.IsActionPressed("ui_up"))
         {
-            _motion.y = Mathf.Clamp(_motion.y + SPEED, MAX_SPEED, 0);
+            _motion.y = Mathf.Clamp(_motion.y + SPEED, 0, MAX_SPEED);
         }
         else
         {
@@ -45,7 +45,7 @@ public class Player : Character
         }
         else if (Input.IsActionPressed("ui_right") && !Input.IsActionPressed("ui_left"))
         {
-            _motion.x = Mathf.Clamp(_motion.x + SPEED, MAX_SPEED, 0);
+            _motion.x = Mathf.Clamp(_motion.x + SPEED, 0, MAX_SPEED);
         }
         else
         {
