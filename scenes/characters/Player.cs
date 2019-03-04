@@ -12,7 +12,7 @@ public class Player : Character
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        
+        _motion = new Vector2();
     }
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,10 +24,32 @@ public class Player : Character
 
     private void UpdateMotion(float delta)
     {
-        if (Input.IsActionJustPressed("ui_up"))
+        LookAt(GetGlobalMousePosition());
+        
+        if (Input.IsActionPressed("ui_up") && !Input.IsActionPressed("ui_down"))
         {
-            _motion.x += delta;
-            Position = _motion;
+            _motion.y = Mathf.Clamp(_motion.y - SPEED, -MAX_SPEED, 0);
+        }
+        else if (Input.IsActionPressed("ui_down") && !Input.IsActionPressed("ui_up"))
+        {
+            _motion.y = Mathf.Clamp(_motion.y + SPEED, MAX_SPEED, 0);
+        }
+        else
+        {
+            _motion.y = Mathf.Lerp(_motion.y, 0, FRICTION);
+        }
+
+        if (Input.IsActionPressed("ui_left") && !Input.IsActionPressed("ui_right"))
+        {
+            _motion.x = Mathf.Clamp(_motion.x - SPEED, -MAX_SPEED, 0);
+        }
+        else if (Input.IsActionPressed("ui_right") && !Input.IsActionPressed("ui_left"))
+        {
+            _motion.x = Mathf.Clamp(_motion.x + SPEED, MAX_SPEED, 0);
+        }
+        else
+        {
+            _motion.x = Mathf.Lerp(_motion.x, 0, FRICTION);
         }
     }
 }
