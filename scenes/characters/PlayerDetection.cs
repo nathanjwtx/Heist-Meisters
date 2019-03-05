@@ -7,6 +7,7 @@ public class PlayerDetection : Character
 {
     /* this is the absolute of half the angle of the torch sprite/image */
     private int FOV_Tolerance = 23;
+    private int MAX_Range = 320;
 
     private Player _player;
 
@@ -40,12 +41,12 @@ public class PlayerDetection : Character
     private bool PlayerIsInLOS()
     {
         Physics2DDirectSpaceState space = GetWorld2d().DirectSpaceState;
-
         Godot.Collections.Array exclude = new Godot.Collections.Array {this};
-
         Dictionary LOS_Obstacle = space.IntersectRay(GlobalPosition, _player.GlobalPosition, exclude, CollisionMask);
-
-        if (LOS_Obstacle["collider"] == _player)
+        float DistToPlayer = _player.GlobalPosition.DistanceTo(GlobalPosition);
+        bool PlayerInRange = DistToPlayer < MAX_Range;
+        
+        if (LOS_Obstacle["collider"] == _player && PlayerInRange)
         {
             return true;
         }
