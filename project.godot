@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Heist_Meisters"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.cs"
+
 [input]
 
 ui_left={

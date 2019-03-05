@@ -26,7 +26,11 @@ public class PlayerDetection : Character
 
         if (Math.Abs(DirToPlayer.AngleTo(NPC_Dir)) < Mathf.Deg2Rad(FOV_Tolerance))
         {
-            GD.Print("I see you");
+            GetNode<Light2D>("Torch").Color = Colors.Red;
+        }
+        else
+        {
+            GetNode<Light2D>("Torch").Color = Colors.ForestGreen;
         }
     }
 }
