@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Diagnostics.CodeAnalysis;
+using Godot.Collections;
 
 public class PlayerDetection : Character
 {
@@ -12,6 +14,7 @@ public class PlayerDetection : Character
     {
         SceneTree root = GetTree();
         _player = root.CurrentScene.GetNode<Player>("Player");
+        PlayerIsInLOS();
     }
 
     public override void _Process(float delta)
@@ -19,12 +22,12 @@ public class PlayerDetection : Character
         Player_In_FOV();
     }
 
-    public void Player_In_FOV()
+    private void Player_In_FOV()
     {
         Vector2 NPC_Dir = new Vector2(1, 0).Rotated(GlobalRotation);
         Vector2 DirToPlayer = (_player.Position - GlobalPosition).Normalized();
 
-        if (Math.Abs(DirToPlayer.AngleTo(NPC_Dir)) < Mathf.Deg2Rad(FOV_Tolerance))
+        if (Math.Abs(DirToPlayer.AngleTo(NPC_Dir)) < Mathf.Deg2Rad(FOV_Tolerance) && PlayerIsInLOS())
         {
             GetNode<Light2D>("Torch").Color = Colors.Red;
         }
@@ -32,5 +35,20 @@ public class PlayerDetection : Character
         {
             GetNode<Light2D>("Torch").Color = Colors.ForestGreen;
         }
+    }
+
+    private bool PlayerIsInLOS()
+    {
+        Physics2DDirectSpaceState space = GetWorld2d().DirectSpaceState;
+
+        Godot.Collections.Array exclude = new Godot.Collections.Array {this};
+
+        Dictionary LOS_Obstacle = space.IntersectRay(GlobalPosition, _player.GlobalPosition, exclude, CollisionMask);
+
+        if (LOS_Obstacle["collider"] == _player)
+        {
+            return true;
+        }
+        return false;
     }
 }
