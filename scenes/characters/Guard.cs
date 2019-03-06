@@ -3,12 +3,13 @@ using System;
 
 namespace Characters
 {
-    public class Character : KinematicBody2D
+    public class Guard : Character
     {
-        public const int SPEED = 10;
-        public const int MAX_SPEED = 200;
-        public const float FRICTION = 0.1f;
+        // Declare member variables here. Examples:
+        // private int a = 2;
+        // private string b = "text";
 
+        // Called when the node enters the scene tree for the first time.
         public override void _Ready()
         {
 

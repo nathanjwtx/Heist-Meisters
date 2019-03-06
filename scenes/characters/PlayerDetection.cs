@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using Godot.Collections;
+using Characters;
 
 public class PlayerDetection : Character
 {
