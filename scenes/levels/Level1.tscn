@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/characters/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/characters/SecurityCamera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tilesets/AutoTileWalls.tres" type="TileSet" id=3]
 [ext_resource path="res://Tilesets/FloorTiles.tres" type="TileSet" id=4]
 [ext_resource path="res://scenes/characters/Guard.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/levels/Navigation2D.cs" type="Script" id=6]
+[ext_resource path="res://scenes/levels/Destinations.cs" type="Script" id=7]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 1668.16, 262.728, 1718.74, 258.837, 1781.79, 259.662, 1781.88, 324.064, 1781.56, 376.869, 887.9, 633.55, 198.2, 632.6, 449.352, 581.031, 768.95, 516.7, 1921.27, 326.473, 1921.27, 249.42, 1972.6, 68.2998, 1971.65, 634.5, 1922.22, 376.869, 311.776, 580.004, 883.311, 391.815, 768, 379.9, 836.4, 198.45, 885.8, 68.2998, 885.8, 263.05, 885.406, 311.506, 834.5, 120.55, 197.25, 69.25, 311.05, 121.5, 887.278, 440.682, 632.15, 517.65, 309.15, 198.45, 311.776, 440.888, 449.352, 442.428, 633.1, 378.95, 1667.39, 121.9, 1717.91, 196.264, 1717.91, 122.625, 1349.8, 391.815, 1349.8, 310.808, 1526.56, 261.954, 1666.7, 441.65, 1461.5, 442.6, 1408.3, 442.6, 434.55, 201.3, 435.5, 263.05, 707.2, 262.1, 1462.45, 516.7, 1589.75, 515.75, 1588.8, 634.5, 1527.05, 634.5, 1473.85, 634.5, 1343.7, 632.6, 1527.05, 709.55, 1780.7, 709.55, 1778.8, 1016.4, 1410.2, 1015.45, 1409.25, 708.6, 1473.85, 708.6, 1343.7, 515.75, 1411.15, 515.75, 708.15, 197.5, 1857.53, 580.666, 1858.56, 453.871, 1922.22, 453.871, 1664.8, 631.65, 1781.05, 580.666, 1347.04, 260.407, 1858.84, 248.933, 1858.36, 184.072, 1795.93, 184.072, 1793.98, 122.137, 1346.55, 69.2498, 1525.01, 121.9, 1846.16, 325.01 )
@@ -68,6 +70,7 @@ position = Vector2( 539.469, 561.181 )
 rotation = 4.71239
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
+script = ExtResource( 6 )
 
 [node name="NavigationPolygonInstance" type="NavigationPolygonInstance" parent="Navigation2D"]
 visible = false
@@ -75,6 +78,7 @@ position = Vector2( 4, 0 )
 navpoly = SubResource( 1 )
 
 [node name="Destinations" type="Node2D" parent="Navigation2D"]
+script = ExtResource( 7 )
 
 [node name="Destination1" type="Position2D" parent="Navigation2D/Destinations"]
 position = Vector2( 1420.55, 130.627 )
