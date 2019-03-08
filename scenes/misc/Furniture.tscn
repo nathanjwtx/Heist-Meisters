@@ -1,0 +1,158 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26.1008, 21.8891 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 30.8697
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 93.7832, 30.1937 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 30.4413, 30.2488 )
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 32.4849
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 42.2906, 23.4361 )
+
+[node name="Furniture" type="Node2D"]
+
+[node name="ComfyChair" type="Sprite" parent="."]
+editor/display_folded = true
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1152, 1152, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ComfyChair"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ComfyChair/StaticBody2D"]
+shape = SubResource( 1 )
+
+[node name="MeetingTableSmall" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 145, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1216, 1152, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MeetingTableSmall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeetingTableSmall/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="TVLarge" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 281, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1152, 1216, 128, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TVLarge"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TVLarge/StaticBody2D"]
+polygon = PoolVector2Array( -50.1762, -8.37559, -21.4312, -8.37559, -16.4701, -10.8561, -10.7795, -12.753, -4.21332, -13.6285, 1.76913, -13.7744, 7.16797, -13.3367, 13.7341, -11.8775, 18.4033, -10.2725, 21.9053, -8.52151, 50.0667, -8.52151, 49.7748, 4.0271, 40.2904, 4.17301, 39.8527, 7.96677, 20.8839, 8.11269, 17.5278, 10.0096, 12.5668, 11.7605, 8.04346, 12.636, 3.37421, 12.9278, -1.14914, 13.0738, -6.25613, 13.0738, -11.8009, 11.9065, -17.0538, 10.3014, -22.3067, 7.96677, -39.9623, 7.96677, -40.6918, 3.88118, -50.1762, 4.0271 )
+
+[node name="DeskFancyLarge" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 0, 110 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1280, 1088, 192, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DeskFancyLarge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeskFancyLarge/StaticBody2D"]
+shape = SubResource( 3 )
+
+[node name="DeskFancySmall" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 172, 111 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1472, 1088, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DeskFancySmall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeskFancySmall/StaticBody2D"]
+shape = SubResource( 4 )
+
+[node name="DeskChair1" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 285.893, 113.742 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1088, 1216, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DeskChair1"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DeskChair1/StaticBody2D"]
+polygon = PoolVector2Array( -14.3084, -19.6097, 14.019, -19.304, 17.0759, -17.8774, 18.4005, -16.0433, 18.91, -13.6996, 21.2537, -12.8845, 21.9669, -11.5598, 22.3745, 7.39307, 22.884, 9.22722, 23.1897, 12.5898, 22.1707, 15.9524, 20.3366, 18.4999, 16.8721, 20.8435, -16.8559, 21.0473, -20.2185, 19.1113, -22.4602, 16.1562, -23.4792, 11.1633, -23.4792, 8.61584, -22.4602, 7.69876, -22.0526, -12.6807, -21.3394, -13.6996, -19.4033, -13.5977, -18.69, -16.2471, -17.4673, -17.8774 )
+
+[node name="Tree1" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 418.081, 103.495 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1280, 384, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1/StaticBody2D"]
+shape = SubResource( 5 )
+
+[node name="FishTank" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 424.229, 2.04941 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1472, 320, 128, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="FishTank"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishTank/StaticBody2D"]
+shape = SubResource( 6 )
+
+[node name="ComfySofa" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 1.02466, 211.09 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 896, 1152, 192, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ComfySofa"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComfySofa/StaticBody2D"]
+polygon = PoolVector2Array( -90.6262, -16.8815, -84.0539, -16.8815, -81.7612, -20.7026, 80.4081, -20.8555, 83.4651, -19.4799, 83.9236, -16.8815, 89.426, -16.2701, 89.8846, 15.0633, 89.1204, 18.5787, 87.1334, 20.8714, 85.4521, 21.7885, -86.1937, 21.6357, -88.6393, 19.4958, -90.6262, 17.0503 )
+
