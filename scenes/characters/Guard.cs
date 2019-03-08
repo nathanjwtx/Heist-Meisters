@@ -56,13 +56,17 @@ namespace Characters
         {
             LookAt(Destination);
             Motion = (Destination - Position).Normalized() * (MAX_SPEED * WalkSlowdown);
+            if (IsOnWall())
+            {
+                MakePath();
+            }
             MoveAndSlide(Motion);
         }
         
         private void MakePath()
         {
             Vector2 nextDestination = _possibleDestinations[Global.GlobalRandom.Next() % _possibleDestinations.Count];
-            _path = _navigation2D.GetSimplePath(GlobalPosition, nextDestination).ToList();
+            _path = _navigation2D.GetSimplePath(GlobalPosition, nextDestination, false).ToList();
             
         }
 
@@ -83,7 +87,7 @@ namespace Characters
         
         private void _on_Timer_timeout()
         {
-            // Replace with function body.
+            MakePath();
         }
     }
 }

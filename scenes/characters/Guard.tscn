@@ -6,6 +6,8 @@
 [ext_resource path="res://scenes/misc/Torch.tscn" type="PackedScene" id=4]
 
 [node name="Guard" index="0" instance=ExtResource( 1 )]
+collision_layer = 8
+collision_mask = 3
 script = ExtResource( 2 )
 WalkSlowdown = 0.5
 navStopThreshold = 5.0
@@ -19,5 +21,6 @@ visible = false
 [node name="Torch" parent="." index="3" instance=ExtResource( 4 )]
 
 [node name="Timer" type="Timer" parent="." index="4"]
+wait_time = 3.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
