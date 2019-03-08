@@ -7,7 +7,7 @@ using Characters;
 public class PlayerDetection : Character
 {
     /* this is the absolute of half the angle of the torch sprite/image */
-    private int FOV_Tolerance = 23;
+    public int FOV_Tolerance = 23;
     private int MAX_Range = 320;
 
     private Player _player;

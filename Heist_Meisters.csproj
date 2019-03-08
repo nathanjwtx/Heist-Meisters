@@ -56,7 +56,8 @@
     <Compile Include="scenes\characters\Player.cs" />
     <Compile Include="scenes\characters\PlayerDetection.cs" />
     <Compile Include="scenes\levels\Destinations.cs" />
-    <Compile Include="scenes\levels\Navigation2D.cs" />
+    <Compile Include="scenes\levels\GuardNavigation.cs" />
+    <Compile Include="scenes\levels\SetVariables.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

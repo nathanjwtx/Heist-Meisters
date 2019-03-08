@@ -5,8 +5,10 @@ using Characters;
 public class Global : Node
 {
     public static Player Player;
-    public static Navigation2D Navigation2D;
+    public static Navigation2D GlobalNavigation2D;
     public static Node2D Destinations;
+    public static SceneTree GlobalSceneTree;
+    public static Random GlobalRandom;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
