@@ -1,12 +1,22 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 26.1008, 21.8891 )
 
+[sub_resource type="OccluderPolygon2D" id=10]
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -26.5902, -17.1238, -21.0424, -17.4936, -17.837, -21.562, 17.5456, -21.562, 20.5044, -17.4936, 25.8057, -16.7539, 26.0522, 18.2588, 22.6003, 21.3409, -22.1519, 21.8341, -26.097, 18.5054, -26.4669, -13.6718 )
+
 [sub_resource type="CircleShape2D" id=2]
 radius = 30.8697
+
+[sub_resource type="OccluderPolygon2D" id=11]
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -30.9655, -3.13412, -29.4857, -9.37048, -27.3717, -14.9726, -23.8836, -19.9406, -19.9726, -23.9572, -15.6389, -27.2339, -10.1425, -29.5593, -4.64601, -31.1449, 1.80174, -31.2506, 6.13548, -30.8278, 11.1034, -29.5593, 15.86, -27.0225, 19.6652, -24.38, 23.5761, -20.2577, 26.5358, -16.5581, 28.7555, -11.6959, 29.6011, -7.89066, 30.341, -3.13412, 30.7638, 1.09391, 30.341, 4.89914, 29.3897, 9.65569, 27.2757, 15.3635, 22.6248, 20.5429, 17.974, 24.6652, 12.9003, 28.0476, 7.5096, 30.4788, 1.80174, 30.6902, -4.22321, 30.3731, -9.50824, 29.3161, -15.4275, 26.4621, -19.5498, 23.5025, -23.8836, 18.9574, -27.3717, 13.9894, -29.5914, 7.85877, -30.437, 1.93952 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 93.7832, 30.1937 )
@@ -23,7 +33,7 @@ extents = Vector2( 42.2906, 23.4361 )
 [sub_resource type="OccluderPolygon2D" id=7]
 closed = false
 cull_mode = 1
-polygon = PoolVector2Array( -90.8069, -16.8212, -84.6011, -17.1239, -82.7848, -21.6647, 82.1984, -21.6647, 84.9229, -18.0321, 90.5232, -17.1239, 90.6746, 19.9595, 87.9501, 22.8353, -87.0229, 22.8353, -89.596, 20.4135, -90.9583, 14.9646 )
+polygon = PoolVector2Array( -90.5314, -17.3722, -84.9311, -17.9777, -81.6011, -22.5185, 80.5063, -22.6698, 85.5012, -17.9777, 90.1934, -17.6749, 91.1016, 19.7112, 88.2257, 21.5275, 85.0471, 22.587, -85.9906, 22.7384, -88.4124, 20.7707, -90.8341, 16.9867, -91.4396, -1.02524, -91.1369, -11.6205 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 93, 29.3889 )
@@ -47,6 +57,9 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComfyChair/StaticBody2D"]
 shape = SubResource( 1 )
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ComfyChair"]
+occluder = SubResource( 10 )
+
 [node name="MeetingTableSmall" type="Sprite" parent="."]
 editor/display_folded = true
 position = Vector2( 145, 0 )
@@ -62,8 +75,10 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeetingTableSmall/StaticBody2D"]
 shape = SubResource( 2 )
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="MeetingTableSmall"]
+occluder = SubResource( 11 )
+
 [node name="TVLarge" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 281, 0 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -153,6 +168,7 @@ __meta__ = {
 shape = SubResource( 6 )
 
 [node name="ComfySofa" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( 1.02466, 211.09 )
 texture = ExtResource( 1 )
 region_enabled = true
