@@ -5,7 +5,6 @@
 [ext_resource path="res://assets/GFX/PNG/Tiles/tile_536.png" type="Texture" id=3]
 [ext_resource path="res://scenes/misc/Torch.tscn" type="PackedScene" id=4]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 [sub_resource type="Animation" id=2]
@@ -47,7 +46,6 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 3 )
 
 [node name="Torch" parent="CameraBody" instance=ExtResource( 4 )]
-texture_scale = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBody"]
 shape = SubResource( 1 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=1]
 
@@ -19,6 +19,17 @@ radius = 32.4849
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 42.2906, 23.4361 )
+
+[sub_resource type="OccluderPolygon2D" id=7]
+closed = false
+cull_mode = 1
+polygon = PoolVector2Array( -90.8069, -16.8212, -84.6011, -17.1239, -82.7848, -21.6647, 82.1984, -21.6647, 84.9229, -18.0321, 90.5232, -17.1239, 90.6746, 19.9595, 87.9501, 22.8353, -87.0229, 22.8353, -89.596, 20.4135, -90.9583, 14.9646 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 93, 29.3889 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 29.8889, 30.003 )
 
 [node name="Furniture" type="Node2D"]
 
@@ -142,7 +153,6 @@ __meta__ = {
 shape = SubResource( 6 )
 
 [node name="ComfySofa" type="Sprite" parent="."]
-editor/display_folded = true
 position = Vector2( 1.02466, 211.09 )
 texture = ExtResource( 1 )
 region_enabled = true
@@ -154,5 +164,39 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="ComfySofa"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ComfySofa/StaticBody2D"]
+visible = false
 polygon = PoolVector2Array( -90.6262, -16.8815, -84.0539, -16.8815, -81.7612, -20.7026, 80.4081, -20.8555, 83.4651, -19.4799, 83.9236, -16.8815, 89.426, -16.2701, 89.8846, 15.0633, 89.1204, 18.5787, 87.1334, 20.8714, 85.4521, 21.7885, -86.1937, 21.6357, -88.6393, 19.4958, -90.6262, 17.0503 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="ComfySofa"]
+occluder = SubResource( 7 )
+
+[node name="DeskPlainLarge" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 237.778, 211.556 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1280, 1024, 192, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DeskPlainLarge"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeskPlainLarge/StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="DeskPlainSmall" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 400.889, 210.222 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1472, 1024, 64, 64 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DeskPlainSmall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeskPlainSmall/StaticBody2D"]
+shape = SubResource( 9 )
 

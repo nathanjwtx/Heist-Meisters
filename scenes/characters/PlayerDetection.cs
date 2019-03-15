@@ -24,7 +24,7 @@ public class PlayerDetection : Character
         Player_In_FOV();
     }
 
-    private void Player_In_FOV()
+    public void Player_In_FOV()
     {
         Vector2 NPC_Dir = new Vector2(1, 0).Rotated(GlobalRotation);
         Vector2 DirToPlayer = (_player.Position - GlobalPosition).Normalized();
@@ -46,7 +46,7 @@ public class PlayerDetection : Character
         Dictionary LOS_Obstacle = space.IntersectRay(GlobalPosition, _player.GlobalPosition, exclude, CollisionMask);
         float DistToPlayer = _player.GlobalPosition.DistanceTo(GlobalPosition);
         bool PlayerInRange = DistToPlayer < MAX_Range;
-        
+
         if (LOS_Obstacle["collider"] == _player && PlayerInRange)
         {
             return true;

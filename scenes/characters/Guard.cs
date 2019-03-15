@@ -21,6 +21,7 @@ namespace Characters
 
         public override void _Ready()
         {
+            base._Ready();
             _destinations = Global.Destinations;
             _navigation2D = Global.GlobalNavigation2D;
             foreach (Position2D position2 in _destinations.GetChildren())
@@ -34,6 +35,7 @@ namespace Characters
 
         public override void _Process(float delta)
         {
+            base._Process(delta);
             Navigate();
         }
 
