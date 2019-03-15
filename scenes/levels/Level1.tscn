@@ -25,6 +25,7 @@ position = Vector2( 445.998, 314.605 )
 current = true
 
 [node name="Cameras" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="SecurityCamera" parent="Cameras" instance=ExtResource( 3 )]
 editor/display_folded = true
@@ -56,9 +57,10 @@ tile_data = PoolIntArray( 14, 16, 0, 65539, 16, 0, 65540, 16, 0, 65541, 16, 0, 6
 [node name="Furniture" type="TileMap" parent="."]
 tile_set = ExtResource( 6 )
 format = 1
-tile_data = PoolIntArray( 131079, 10, 0, 131081, 10, 0, 196615, 9, 0, 327684, -1610612736, 0, 327686, -1073741823, 0, 327690, -1073741823, 0, 327692, -1073741824, 0, 393220, -1610612736, 0, 393228, -1073741824, 0, 458756, -1073741818, 0, 458757, 8, 0, 458761, 8, 0, 458764, 1610612742, 0 )
+tile_data = PoolIntArray( 131080, 1610612741, 0, 196615, 9, 0, 327684, -1610612736, 0, 327686, -1073741823, 0, 327690, -1073741823, 0, 327692, -1073741824, 0, 393220, -1610612736, 0, 393228, -1073741824, 0, 458756, -1073741818, 0, 458757, 8, 0, 458761, 8, 0, 458764, 1610612742, 0 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.0431373, 0.0627451, 0.356863, 1 )
 
 [node name="Guards" type="Node2D" parent="."]
@@ -71,8 +73,8 @@ position = Vector2( 1662.44, 977.029 )
 rotation = -2.02633
 
 [node name="Guard3" parent="Guards" instance=ExtResource( 7 )]
-position = Vector2( 650.369, 448.865 )
-rotation = 4.71239
+position = Vector2( 705.241, 285.106 )
+rotation = 3.98562
 
 [node name="GuardNavigation" type="Navigation2D" parent="."]
 editor/display_folded = true
