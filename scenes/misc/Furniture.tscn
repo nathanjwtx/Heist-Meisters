@@ -84,7 +84,6 @@ polygon = PoolVector2Array( -30.5198, -30.6587, 29.9405, -30.2024, 30.1686, 30.0
 [node name="Furniture" type="Node2D"]
 
 [node name="ComfyChair" type="Sprite" parent="."]
-editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 1152, 1152, 64, 64 )
@@ -95,9 +94,11 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="ComfyChair"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ComfyChair/StaticBody2D"]
+visible = false
 shape = SubResource( 1 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="ComfyChair"]
+visible = false
 occluder = SubResource( 2 )
 
 [node name="MeetingTableSmall" type="Sprite" parent="."]

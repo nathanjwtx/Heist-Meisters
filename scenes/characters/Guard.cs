@@ -36,7 +36,7 @@ namespace Characters
         public override void _Process(float delta)
         {
             base._Process(delta);
-//            Navigate();
+            Navigate();
         }
 
         private void Navigate()
