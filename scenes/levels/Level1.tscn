@@ -120,4 +120,3 @@ position = Vector2( 1167, 898 )
 
 [node name="Destination9" type="Position2D" parent="GuardNavigation/LevelDestinations"]
 position = Vector2( 1149, 379 )
-
