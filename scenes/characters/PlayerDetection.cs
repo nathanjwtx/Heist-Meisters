@@ -47,7 +47,15 @@ public class PlayerDetection : Character
         float DistToPlayer = _player.GlobalPosition.DistanceTo(GlobalPosition);
         bool PlayerInRange = DistToPlayer < MAX_Range;
 
-        if (LOS_Obstacle["collider"] == _player && PlayerInRange)
+        // foreach(var field in LOS_Obstacle)
+        // {
+        //     if (field.Key.ToString() == "collider")
+        //     {
+        //         GD.Print($"key: {field.Key}, value: {field.Value}");
+        //     }
+            
+        // }
+        if (LOS_Obstacle["collider"].GetType() == typeof(Player) && PlayerInRange)
         {
             return true;
         }
